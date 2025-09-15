@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Evergreen | Walahanduwa Tea</title>
+    <meta name="description" content="Premium tea from Walahanduwa Tea Factory">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="56x56" href="images/icon.png">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script src="js/tailwindconfig.js"></script>
+
+  <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+
+    <!-- AOS CSS (Add in <head>) -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    
+    <!-- Main Style CSS -->
+	<link rel="stylesheet" href="css/styles2.css" type="text/css" media="all">  
+    
+</head>
+
+    
+
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+<!-- Loader -->
+<div id="loader" class="fixed inset-0 bg-[#e0f2e9] dark:bg-gray-800 z-[999] flex flex-col justify-center items-center transition-opacity duration-[800ms] delay-[1000ms] opacity-100">
+    <div class="relative w-[70px] h-[55px] bg-[#3e8e41] rounded-b-[35px] shadow-md flex items-center justify-center animate-cup">
+        <!-- Steam -->
+        <div class="absolute w-[7px] h-[35px] bg-white/70 rounded-full top-[-25px] left-[15px] animate-steam1"></div>
+        <div class="absolute w-[7px] h-[35px] bg-white/70 rounded-full top-[-25px] left-[35px] animate-steam2"></div>
+        <div class="absolute w-[7px] h-[35px] bg-white/70 rounded-full top-[-25px] left-[50px] animate-steam3"></div>
+        
+        <!-- Handle -->
+        <div class="absolute right-[-18px] top-[12px] w-[22px] h-[22px] border-[5px] border-[#3e8e41] rounded-full"></div>
+        
+        <!-- Plate -->
+        <div class="absolute bottom-[-12px] w-[90px] h-[12px] bg-[#2c6e3e] rounded-full shadow-md"></div>
+    </div>
+    
+    <p class="mt-5 text-[#2c6e3e] dark:text-green-400 text-[18px] font-bold uppercase tracking-wider font-[Poppins] animate-text">
+        Brewing the best tea for you...
+    </p>
+</div>
+
+<!-- Top Header -->
+<div class="bg-green-800 dark:bg-gray-800 text-white py-2 hidden md:block transition-colors duration-300">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center flex-wrap">
+                <div class="flex items-center mr-8" data-aos="fade-right">
+                    <i class="fas fa-clock mr-2"></i>
+                    <span class="text-sm">OPENING HOURS : 08:00 AM - 05:00 PM</span>
+                </div>
+                <div class="flex space-x-3" data-aos="fade-right" data-aos-delay="100">
+                    <a href="https://www.facebook.com/" class="hover:text-blue-400 transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/" class="hover:text-pink-400 transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" class="hover:text-pink-400 transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/" class="hover:text-red-400 transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/" class="hover:text-blue-400 transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="flex items-center" data-aos="fade-left">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                <span class="text-sm">LOCATION : Walahanduwa Tea Factory, Walahanduwa, Galle.</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Navigation -->
+<nav class="bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-40 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+
+            <!-- Logo -->
+<div class="flex items-center" data-aos="fade-right">
+  <a href="index.html" class="flex items-center hover:scale-105 transition-transform duration-300">
+    <!-- Light Logo -->
+    <img src="images/logo.png" alt="Walahanduwa Tea Light" class="h-12 w-auto dark:hidden">
+    
+    <!-- Dark Logo -->
+    <img src="images/logo2.png" alt="Walahanduwa Tea Dark" class="h-12 w-auto hidden dark:block">
+  </a>
+</div>
+
+            
+            <!-- Theme Toggle Button -->
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="theme-toggle p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600">
+                    <i id="theme-icon" class="fas fa-moon text-lg"></i>
+                </button>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8" data-aos="fade-down">
+                    <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 font-medium transition-all duration-300 hover:scale-105">Home</a>
+                    <a href="ourshop.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 font-medium transition-all duration-300 hover:scale-105">Our Shop</a>
+                    <a href="blog.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 font-medium transition-all duration-300 hover:scale-105">Blog</a>
+                    <a href="teatour.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 font-medium transition-all duration-300 hover:scale-105">Tea Tour</a>
+                    
+                    <!-- Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 font-medium transition-all duration-300 flex items-center hover:scale-105">
+                            Our Services
+                            <i class="fas fa-chevron-down ml-1 text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <a href="about.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 rounded-t-lg transition-all duration-200">About Us</a>
+                            <a href="extension.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 transition-all duration-200">Extension</a>
+                            <a href="csr.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 transition-all duration-200">CSR</a>
+                            <a href="tour.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 transition-all duration-200">Tour Booking</a>
+                            <a href="faq.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 rounded-b-lg transition-all duration-200">FAQ</a>
+                        </div>
+                    </div>
+                    
+                    <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 font-medium transition-all duration-300 hover:scale-105">Contact Us</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden flex items-center px-3 py-2 border rounded text-gray-500 dark:text-gray-400 border-gray-600 dark:border-gray-500 hover:text-green-600 hover:border-green-600 transition-all duration-300">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden flex-col space-y-2 pb-4 lg:hidden transition-all duration-300">
+            <div class="flex flex-col space-y-2">
+                <a href="index.html" class="block py-2 px-4 text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 rounded transition-all duration-200">Home</a>
+                <a href="ourshop.html" class="block py-2 px-4 text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 rounded transition-all duration-200">Our Shop</a>
+                <a href="blog.html" class="block py-2 px-4 text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 rounded transition-all duration-200">Blog</a>
+                <a href="teatour.html" class="block py-2 px-4 text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 rounded transition-all duration-200">Tea Tour</a>
+                <div class="pl-4">
+                    <p class="py-2 px-4 text-gray-600 dark:text-gray-400 font-medium">Our Services</p>
+                    <a href="about.html" class="block py-1 px-8 text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200">About Us</a>
+                    <a href="extension.html" class="block py-1 px-8 text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200">Extension</a>
+                    <a href="csr.html" class="block py-1 px-8 text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200">CSR</a>
+                    <a href="tour.html" class="block py-1 px-8 text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200">Tour Booking</a>
+                    <a href="faq.html" class="block py-1 px-8 text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200">FAQ</a>
+                </div>
+                <a href="contact.html" class="block py-2 px-4 text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 rounded transition-all duration-200">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="bg-gradient-to-r from-green-800 to-green-600 py-16 md:py-24 transition-colors duration-300" data-aos="fade-in">
+    <div class="container mx-auto px-4">
+        <div class="text-center text-white">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4" data-aos="fade-up">Extension Department</h1>
+            <nav class="flex justify-center items-center space-x-2 text-sm md:text-base" data-aos="fade-up" data-aos-delay="100">
+                <a href="index.html" class="hover:text-green-200 transition-colors flex items-center hover:scale-105 duration-300">
+                    <i class="fas fa-home mr-1"></i>
+                    Home
+                </a>
+                <span class="text-green-200">/</span>
+                <span>Extension</span>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<section class="px-4 py-16 md:px-12 lg:px-24 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100" data-aos="fade-in">
+  <div class="max-w-4xl mx-auto text-center">
+    <h3 class="text-3xl md:text-4xl font-extrabold text-green-700 dark:text-green-300 mb-6" data-aos="fade-up">Our Factory Extension Services</h3>
+    <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300" data-aos="fade-up" data-aos-delay="100">
+      At our tea factory, we believe that <span class="font-medium text-green-700 dark:text-green-400">empowering farmers</span> is the key to producing the highest quality tea...
+    </p>
+    <p class="mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300" data-aos="fade-up" data-aos-delay="200">
+      We work closely with farmers to ensure best farming practices, fair trade opportunities, and environmentally friendly tea production...
+    </p>
+  </div>
+</section>
+
+<!-- Services for Farmers Section -->
+<section class="px-4 py-16 md:px-10 lg:px-20 bg-gray-50 dark:bg-gray-800">
+  <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12" data-aos="fade-up">Our Services for Farmers</h2>
+  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    
+    <!-- Farmer Training -->
+    <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition duration-500 transform hover:-translate-y-2" data-aos="zoom-in">
+      <img src="https://cdn-icons-png.flaticon.com/512/3126/3126484.png" alt="Farmer Training" class="w-16 h-16 mx-auto mb-4">
+      <h3 class="text-xl font-semibold text-green-700 dark:text-green-300">Farmer Training</h3>
+      <p class="text-gray-600 dark:text-gray-300 mt-2">
+        Hands-on training and workshops to improve tea farming techniques and efficiency.
+      </p>
+    </div>
+
+    <!-- Fertilizer & Supply -->
+    <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition duration-500 transform hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="100">
+      <img src="https://cdn-icons-png.flaticon.com/512/2343/2343810.png" alt="Fertilizer" class="w-16 h-16 mx-auto mb-4">
+      <h3 class="text-xl font-semibold text-green-700 dark:text-green-300">Fertilizer & Inputs</h3>
+      <p class="text-gray-600 dark:text-gray-300 mt-2">
+        Access to high-quality fertilizers and eco-friendly agricultural supplies.
+      </p>
+    </div>
+
+    <!-- Leaf Quality Checking -->
+    <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition duration-500 transform hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="200">
+      <img src="https://cdn-icons-png.flaticon.com/512/2784/2784473.png" alt="Quality Check" class="w-16 h-16 mx-auto mb-4">
+      <h3 class="text-xl font-semibold text-green-700 dark:text-green-300">Leaf Quality Check</h3>
+      <p class="text-gray-600 dark:text-gray-300 mt-2">
+        On-site green leaf quality inspection to ensure standards before processing.
+      </p>
+    </div>
+
+    <!-- Fair Price Purchasing -->
+    <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition duration-500 transform hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="300">
+      <img src="https://cdn-icons-png.flaticon.com/512/3259/3259733.png" alt="Fair Price" class="w-16 h-16 mx-auto mb-4">
+      <h3 class="text-xl font-semibold text-green-700 dark:text-green-300">Fair Price Policy</h3>
+      <p class="text-gray-600 dark:text-gray-300 mt-2">
+        Guaranteed competitive and transparent pricing to support farmer income.
+      </p>
+    </div>
+
+    <!-- Technical Support -->
+    <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition duration-500 transform hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="400">
+      <img src="https://cdn-icons-png.flaticon.com/512/3985/3985507.png" alt="Tech Support" class="w-16 h-16 mx-auto mb-4">
+      <h3 class="text-xl font-semibold text-green-700 dark:text-green-300">Technical Support</h3>
+      <p class="text-gray-600 dark:text-gray-300 mt-2">
+        Personalized guidance on soil management, pest control, and field practices.
+      </p>
+    </div>
+
+    <!-- Digital Record Keeping -->
+    <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition duration-500 transform hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="500">
+      <img src="https://cdn-icons-png.flaticon.com/512/2413/2413146.png" alt="Record Keeping" class="w-16 h-16 mx-auto mb-4">
+      <h3 class="text-xl font-semibold text-green-700 dark:text-green-300">Digital Record Keeping</h3>
+      <p class="text-gray-600 dark:text-gray-300 mt-2">
+        Tools and training to help farmers maintain digital crop and supply records.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Image Slider Section -->
+<section class="px-4 py-16 md:px-10 lg:px-20 bg-white dark:bg-gray-900" data-aos="fade-up">
+  <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-10" data-aos="fade-up">Our Work with Farmers</h2>
+  <div class="relative overflow-hidden rounded-2xl shadow-lg" data-aos="zoom-in-up">
+    <div class="flex transition-transform duration-700 ease-in-out" id="slider">
+      <div class="min-w-full"><img src="images/ext1.jpg" alt="Tea Farmers" class="w-full h-64 object-cover"></div>
+      <div class="min-w-full"><img src="images/ext2.jpg" alt="Tea Plantation" class="w-full h-64 object-cover"></div>
+      <div class="min-w-full"><img src="images/ext3.jpg" alt="Training Farmers" class="w-full h-64 object-cover"></div>
+      <div class="min-w-full"><img src="images/ext4.jpg" alt="Organic Tea" class="w-full h-64 object-cover"></div>
+    </div>
+    <button onclick="moveSlide(-1)" class="absolute top-1/2 left-4 -translate-y-1/2 bg-green-700 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-green-600 transition">
+      &#10094;
+    </button>
+    <button onclick="moveSlide(1)" class="absolute top-1/2 right-4 -translate-y-1/2 bg-green-700 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-green-600 transition">
+      &#10095;
+    </button>
+  </div>
+</section>
+
+
+<!-- WhatsApp Chat Button -->
+<div class="fixed bottom-20 right-6 z-50" data-aos="zoom-in" data-aos-delay="1000">
+    <div class="relative group">
+        <a
+            href="https://wa.me/94766450575"
+            target="_blank"
+            class="bg-green-500 hover:bg-green-600 rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all duration-300 pulse-green hover:scale-110"
+        >
+            <i class="fab fa-whatsapp text-white text-2xl animate-bounce-custom"></i>
+        </a>
+    </div>
+</div>
+
+<!-- WhatsApp Popup Guidance -->
+<div id="whatsapp-popup"
+    class="fixed bottom-36 right-6 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 shadow-xl p-4 rounded-lg w-72 z-50 opacity-0 translate-y-5 transition-all duration-700">
+    <div class="flex justify-between items-start">
+        <div>
+            <h2 class="text-green-600 dark:text-green-400 font-bold mb-2">Need help?</h2>
+            <p class="text-sm text-gray-700 dark:text-gray-300">Click the Whatsapp icon to chat with us on WhatsApp!</p>
+        </div>
+        <button onclick="closePopup()" class="text-gray-500 dark:text-gray-400 hover:text-red-600 text-lg font-bold ml-3 transition-colors duration-200">&times;</button>
+    </div>
+    <button onclick="closePopup()" class="mt-3 text-sm text-blue-600 dark:text-blue-400 hover:underline transition-colors duration-200">Got it</button>
+</div>
+
+<!-- Notification Sound -->
+<audio id="guidance-sound" src="https://www.soundjay.com/buttons/sounds/button-29.mp3" preload="auto"></audio>
+
+<!-- Footer -->
+<footer class="bg-gray-900 dark:bg-gray-950 text-white transition-colors duration-300">
+    <!-- Newsletter Section -->
+    
+   <!-- Footer -->
+<footer class="bg-gray-900 dark:bg-gray-950 text-white transition-colors duration-300">
+
+    
+    <!-- Newsletter Section -->
+<div class="bg-green-600 dark:bg-green-700 py-12 transition-colors duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      
+      <!-- Left Text -->
+      <div data-aos="fade-up" data-aos-delay="200">
+        <h4 class="text-3xl font-bold text-white mb-2">Sign Up To Get Latest Updates</h4>
+        <p class="text-green-100 text-lg">Subscribe to our monthly newsletter for news &amp; articles</p>
+      </div>
+      
+      <!-- Newsletter Form -->
+      <div data-aos="fade-up" data-aos-delay="300">
+        <form class="flex flex-col sm:flex-row items-start sm:items-stretch gap-4">
+          <input
+            type="email"
+            placeholder="Enter Your Email"
+            class="w-full sm:w-auto flex-1 px-5 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-300 transition-all duration-200"
+            required
+            aria-label="Email address"
+          >
+          <button
+            type="submit"
+            class="bg-green-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-all duration-200 hover:scale-105"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    
+
+
+    <!-- Main Footer -->
+    <div class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+                <!-- Company Info -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="mb-8 max-w-md">
+                        <img src="images/logo2.png" alt="Walahanduwa Tea" class="h-14 w-auto mb-4 drop-shadow-md transition-transform duration-300 hover:scale-105">
+                        <p class="text-gray-300 dark:text-gray-400 leading-relaxed">
+                            "Walahanduwa Tea Factory – A cherished gem of the Evergreen Group, and the unrivaled leader in Sri Lanka's flourishing tea industry."
+                        </p>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/" class="text-gray-400 hover:text-blue-400 transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/" class="text-gray-400 hover:text-pink-400 transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" class="text-gray-400 hover:text-pink-400 transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://www.youtube.com/" class="text-gray-400 hover:text-red-400 transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/" class="text-gray-400 hover:text-blue-400 transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Working Hours -->
+                <div class="ml-10" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-xl font-semibold mb-6">Working Hours</h4>
+                    <div class="space-y-4 text-gray-300 dark:text-gray-400">
+                        <div class="flex flex-col items-start transition-transform duration-200 hover:translate-x-2">
+                            <span class="font-medium">Monday - Friday</span>
+                            <span class="text-sm">8:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="flex flex-col items-start transition-transform duration-200 hover:translate-x-2">
+                            <span class="font-medium">Saturday</span>
+                            <span class="text-sm">9:00 AM - 2:00 PM</span>
+                        </div>
+                        <div class="flex flex-col items-start transition-transform duration-200 hover:translate-x-2">
+                            <span class="font-medium">Sunday</span>
+                            <span class="text-sm">Closed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="text-xl font-semibold mb-6">Contact Us</h4>
+                    <div class="space-y-4 text-gray-300 dark:text-gray-400">
+                        <div class="flex items-start group cursor-pointer">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-green-400 text-2xl transition-transform duration-200 group-hover:scale-110"></i>
+                            <div>
+                                <p class="font-medium">Phone Number</p>
+                                <p>+94 76 645 0575</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start group cursor-pointer">
+                            <i class="fas fa-envelope mt-1 mr-3 text-green-400 text-2xl transition-transform duration-200 group-hover:scale-110"></i>
+                            <div>
+                                <p class="font-medium">E-Mail</p>
+                                <p>office@walahanduwatea.lk</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start group cursor-pointer">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-400 text-2xl transition-transform duration-200 group-hover:scale-110"></i>
+                            <div>
+                                <p class="font-medium">Location</p>
+                                <p>Walahanduwa, Galle.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other Factories -->
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="text-xl font-semibold mb-6">Other Factories</h4>
+                    <div class="grid grid-cols-3 gap-2">
+                        <a href="https://evergreengroup.lk/" class="block">
+                            <img src="images/foter-mnu1.jpg" alt="Factory 1" class="w-full h-16 object-cover rounded hover:opacity-80 transition-all duration-300 hover:scale-105">
+                        </a>
+                        <a href="https://evergreengroup.lk/" class="block">
+                            <img src="images/foter-mnu2.jpg" alt="Factory 2" class="w-full h-16 object-cover rounded hover:opacity-80 transition-all duration-300 hover:scale-105">
+                        </a>
+                        <a href="https://evergreengroup.lk/" class="block">
+                            <img src="images/foter-mnu3.jpg" alt="Factory 3" class="w-full h-16 object-cover rounded hover:opacity-80 transition-all duration-300 hover:scale-105">
+                        </a>
+                        <a href="https://evergreengroup.lk/" class="block">
+                            <img src="images/foter-mnu4.jpg" alt="Factory 4" class="w-full h-16 object-cover rounded hover:opacity-80 transition-all duration-300 hover:scale-105">
+                        </a>
+                        <a href="https://evergreengroup.lk/" class="block">
+                            <img src="images/foter-mnu5.jpg" alt="Factory 5" class="w-full h-16 object-cover rounded hover:opacity-80 transition-all duration-300 hover:scale-105">
+                        </a>
+                        <a href="https://evergreengroup.lk/" class="block">
+                            <img src="images/foter-mnu6.jpg" alt="Factory 6" class="w-full h-16 object-cover rounded hover:opacity-80 transition-all duration-300 hover:scale-105">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="border-t border-gray-800 dark:border-gray-700 py-6" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <div class="text-center text-gray-400">
+                <p>Copyright © 2025 <span class="text-green-400">Pawan Samaraweera</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button id="scroll-to-top" class="fixed bottom-6 right-6 bg-green-600 text-white w-12 h-12 rounded-full shadow-lg hover:bg-green-700 transition-all duration-300 opacity-0 invisible hover:scale-110">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script src="js/csr.js"></script>
+
+
+
+</body>
+</html>

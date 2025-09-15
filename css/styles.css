@@ -1,0 +1,202 @@
+/* === ANIMATIONS === */
+
+/* Fade Up */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up, .fade-up.show {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+/* Slide In Left */
+@keyframes slideInLeft {
+  0% { opacity: 0; transform: translateX(-40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-left, .fade-left.show {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+/* Slide In Right */
+@keyframes slideInRight {
+  0% { opacity: 0; transform: translateX(40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-right, .fade-right.show {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+/* Bounce */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+.animate-bounce-custom {
+  animation: bounce 2s infinite;
+}
+
+/* Pulse (Green) */
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+.pulse-green {
+  animation: pulseGreen 2s infinite;
+}
+
+/* Cup Steam Animations */
+@keyframes cup {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(5deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+.animate-cup { animation: cup 2s ease-in-out infinite; }
+
+@keyframes steam1 {
+  0% { opacity: 0.7; transform: translateY(0) rotate(0deg); }
+  50% { opacity: 1; transform: translateY(-10px) rotate(5deg); }
+  100% { opacity: 0.7; transform: translateY(0) rotate(0deg); }
+}
+.animate-steam1 { animation: steam1 1.5s ease-in-out infinite; }
+
+@keyframes steam2 {
+  0% { opacity: 0.5; transform: translateY(0) rotate(0deg); }
+  50% { opacity: 0.8; transform: translateY(-15px) rotate(-3deg); }
+  100% { opacity: 0.5; transform: translateY(0) rotate(0deg); }
+}
+.animate-steam2 { animation: steam2 1.8s ease-in-out infinite 0.3s; }
+
+@keyframes steam3 {
+  0% { opacity: 0.6; transform: translateY(0) rotate(0deg); }
+  50% { opacity: 0.9; transform: translateY(-12px) rotate(3deg); }
+  100% { opacity: 0.6; transform: translateY(0) rotate(0deg); }
+}
+.animate-steam3 { animation: steam3 1.6s ease-in-out infinite 0.6s; }
+
+/* Text Load Animation */
+@keyframes text {
+  0% { opacity: 0; transform: translateY(20px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0.8; transform: translateY(0); }
+}
+.animate-text { animation: text 3s ease-in-out infinite; }
+
+/* === TRANSITIONS & UI === */
+
+/* Theme smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile menu animation */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+.mobile-menu.active {
+  max-height: 600px;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.dark .card-hover:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Form input animation */
+.form-input {
+  transition: all 0.3s ease;
+}
+.form-input:focus {
+  transform: translateY(-2px);
+}
+
+
+ 
+
+        /* Hover Effects */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Page Content Hidden Initially */
+        .page-content {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .page-content.loaded {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+
+        
+        /* WhatsApp Pulse Animation */
+        @keyframes pulse-green {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+            }
+        }
+        
+        .pulse-green {
+            animation: pulse-green 2s infinite;
+        }
+        
+        @keyframes bounce-custom {
+            0%, 20%, 53%, 80%, 100% {
+                transform: translate3d(0,0,0);
+            }
+            40%, 43% {
+                transform: translate3d(0,-8px,0);
+            }
+            70% {
+                transform: translate3d(0,-4px,0);
+            }
+            90% {
+                transform: translate3d(0,-2px,0);
+            }
+        }
+        
+        .animate-bounce-custom {
+            animation: bounce-custom 2s ease-in-out infinite;
+        }
+
+
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out both;
+  }
+
